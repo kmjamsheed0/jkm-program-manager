@@ -180,7 +180,7 @@ class JKMPM_Import_Handle {
         // Update meta fields
         update_post_meta($post_id, 'jkm_program_start_date', sanitize_text_field($program_data['Program Start Date']));
         update_post_meta($post_id, 'jkm_program_end_date', sanitize_text_field($program_data['Program End Date']));
-        
+
         if (!empty($program_data['Broadcast Schedule'])) {
             update_post_meta($post_id, 'jkm_program_schedule', sanitize_text_field($program_data['Broadcast Schedule']));
         }
@@ -246,7 +246,7 @@ class JKMPM_Import_Handle {
      * Handle thumbnail upload/attachment
      */
     private function handle_thumbnail($post_id, $thumbnail_url) {
-        if (filter_var($thumbnail_url, FILTER_VALIDATE_URL)) {
+        if (filter_var($thumbnail_url, FILTER_VALIDATE_URL)) {     //Validate url
             require_once(ABSPATH . 'wp-admin/includes/media.php');
             require_once(ABSPATH . 'wp-admin/includes/file.php');
             require_once(ABSPATH . 'wp-admin/includes/image.php');
@@ -264,7 +264,7 @@ class JKMPM_Import_Handle {
             );
 
             // Set thumbnail
-            $thumbnail_id = media_handle_sideload($file_array, $post_id);
+            $thumbnail_id = media_handle_sideload($file_array, $post_id); //url must have extension
 
             if (!is_wp_error($thumbnail_id)) {
                 set_post_thumbnail($post_id, $thumbnail_id);
