@@ -1,12 +1,12 @@
 <?php
 /**
- * Woo Force Sells Settings
+ * file that defines core plugin classes.
  *
  * @author   Jamsheed KM
  * @since    1.0.0
  *
- * @package    jkm-force-sells
- * @subpackage jkm-force-sells/includes
+ * @package    jkm-program-manager
+ * @subpackage jkm-program-manager/includes
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -35,6 +35,7 @@ class JKMPM {
         require_once JKMPM_PATH . 'admin/class-jkmpm-admin.php';
         require_once JKMPM_PATH . 'public/class-jkmpm-public.php';
         require_once JKMPM_PATH . 'includes/utils/class-jkmpm-utils.php';
+        require_once JKMPM_PATH . 'includes/class-jkmpm-import.php';
     }
 
     private function define_admin_hooks() {

@@ -212,13 +212,13 @@ class JKMPM_Admin {
         
         ?>
         <div class="wrap">
-            <h1><?php _e('Import Programs', 'jkmpm'); ?></h1>
+            <h1><?php _e('Import Programs', 'jkm-program-manager'); ?></h1>
             <form method="post" enctype="multipart/form-data">
                 <?php wp_nonce_field('jkmpm_import_programs'); ?>
                 <table class="form-table">
                     <tr>
                         <th scope="row">
-                            <label for="csv_file"><?php _e('CSV File', 'jkmpm'); ?></label>
+                            <label for="csv_file"><?php _e('CSV File', 'jkm-program-manager'); ?></label>
                         </th>
                         <td>
                             <input type="file" 
@@ -229,10 +229,40 @@ class JKMPM_Admin {
                         </td>
                     </tr>
                 </table>
-                <?php submit_button(__('Import', 'jkmpm'), 'primary', 'import_submit'); ?>
+                <?php submit_button(__('Import', 'jkm-program-manager'), 'primary', 'import_submit'); ?>
             </form>
         </div>
         <?php
+    }
+
+    private function handle_import() {
+        if (!isset($_FILES['csv_file'])) {
+            wp_die(__('No file uploaded', 'jkm-program-manager'));
+        }
+
+        $import_handler = new JKMPM_Import_Handle();
+        $results = $import_handler->run_import($_FILES['csv_file']);
+
+        if (!empty($results['errors'])) {
+            echo '<div class="error"><p>' . 
+                 implode('<br>', array_map('esc_html', $results['errors'])) . 
+                 '</p></div>';
+        }
+
+        if (!empty($results['messages'])) {
+            echo '<div class="notice notice-info"><p>' . 
+                 implode('<br>', array_map('esc_html', $results['messages'])) . 
+                 '</p></div>';
+        }
+
+        if ($results['success']) {
+            echo '<div class="updated"><p>' . 
+                 sprintf(
+                     __('Imported %d programs successfully.', 'jkm-program-manager'),
+                     $results['imported']
+                 ) . 
+                 '</p></div>';
+        }
     }
 
     public function jkmpm_enque_styles_and_scripts( $hook ) {
