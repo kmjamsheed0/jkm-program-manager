@@ -14,6 +14,10 @@ You can list the created programs on the frontend using the shortcode:
 ## Installation
 You can download the **tagged version** from the repository **tags section** or **clone** the repo to extend functionality.
 
+- The plugin **does not include an activation redirect** to the "Add New Program" page.
+- **No settings link** is added to the plugin list page, The plugin settings can be found in the **WordPress dashboard** under the menu **'Radio Programs'** with an **audio playlist icon**.
+- To access the plugin settings, please **navigate to the correct menu('Radio Programs')** in the WordPress dashboard following these instructions.
+
 ## Importing Programs via CSV
 To bulk import programs, use a CSV file formatted as follows:
 
