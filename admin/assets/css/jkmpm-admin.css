@@ -1,0 +1,62 @@
+#jkmpm-program-schedule {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; 
+    max-width: 500px;
+}
+
+.jkmpm-schedule-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(50% - 5px);
+    background: #f9f9f9;
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.jkmpm-schedule-row label {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-weight: 500;
+}
+
+.jkmpm-schedule-row input[type="time"] {
+    width: 50%;
+    padding: 5px;
+}
+
+/* Date period */
+
+#jkmpm-date-meta_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+}
+
+#jkmpm-date-meta_wrapper p {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    margin: 0;
+    flex: 1;
+}
+
+#jkmpm-date-meta_wrapper label {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+#jkmpm-date-meta_wrapper input[type="date"] {
+    width: 100%;
+    padding: 5px;
+}
+

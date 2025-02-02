@@ -1,0 +1,130 @@
+.jkmpm-schedule-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.jkmpm-schedule-wrapper.loading {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.jkmpm-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 5px;
+}
+
+.jkmpm-prev-week,
+.jkmpm-next-week {
+    padding: 8px 16px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.jkmpm-prev-week:hover,
+.jkmpm-next-week:hover {
+    background: #0056b3;
+}
+
+.jkmpm-week-display {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.jkmpm-schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.jkmpm-day-column {
+    border: 1px solid #e9ecef;
+    padding: 10px;
+    min-height: 200px;
+}
+
+.jkmpm-day-header {
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.jkmpm-programs {
+    padding: 10px 0;
+}
+
+.jkmpm-program-card {
+    background: white;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.jkmpm-program-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.jkmpm-program-thumbnail {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+
+.jkmpm-program-info {
+    padding: 10px;
+}
+
+.jkmpm-program-title {
+    margin: 0 0 5px 0;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.jkmpm-program-time {
+    display: block;
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+.jkmpm-no-programs {
+    text-align: center;
+    color: #6c757d;
+    font-style: italic;
+    margin: 20px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .jkmpm-schedule-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .jkmpm-schedule-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .jkmpm-navigation {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
