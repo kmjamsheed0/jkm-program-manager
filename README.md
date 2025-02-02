@@ -30,7 +30,11 @@ To bulk import programs, use a CSV file formatted as follows:
 #### **Sample Data**
 ```
 Program Name,Program Description,Program Start Date,Program End Date,Program Thumbnail,Broadcast Schedule
-Morning News,Daily news updates,2025-01-01,2025-01-31,https://example.com/image1.jpg,"{""Mon"": ""08:00"", ""Tue"": ""09:00"", ""Wed"": ""10:00""}"
+Tech Talk,"Latest discussions on technology trends",2025-02-01,2025-02-28,https://picsum.photos/id/10/200/300.jpg,"{""Tue"": ""14:00"", ""Thu"": ""15:30""}"
+Health Hour,"Tips and advice on healthy living",2025-04-01,2025-04-30,https://picsum.photos/id/10/200/300.jpg,"{""Mon"": ""10:00"", ""Wed"": ""11:00"", ""Fri"": ""12:30""}"
+Music Mania,"A show featuring the best of classic and modern music",2025-05-01,2025-05-31,https://picsum.photos/id/10/200/300.jpg,"{""Sat"": ""17:00"", ""Sun"": ""18:00""}"
+Travel Diaries,"Exploring the world's best destinations",2025-06-01,2025-06-30,https://picsum.photos/id/10/200/300.jpg,"{""Wed"": ""15:00"", ""Sun"": ""16:30""}"
+Food Fiesta,"A show about delicious recipes and food culture",2025-07-01,2025-07-31,https://picsum.photos/id/10/200/300.jpg,"{""Fri"": ""12:00"", ""Sat"": ""13:30""}"
 ```
 
 ### **Important Notes:**
